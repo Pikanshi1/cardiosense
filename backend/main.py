@@ -7,6 +7,17 @@ from pathlib import Path
 
 app = FastAPI(title="Heart Disease Prediction API")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://cardiosense-nine.vercel.app",
+    ],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
+)
+
 BASE_DIR = Path(__file__).resolve().parent
 
 model = joblib.load(BASE_DIR / "Knn_heart_model.pkl")
