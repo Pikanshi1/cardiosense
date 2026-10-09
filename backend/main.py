@@ -9,7 +9,7 @@ app = FastAPI(title="Heart Disease Prediction API")
 
 BASE_DIR = Path(__file__).resolve().parent
 
-model = joblib.load(BASE_DIR / "knn_heart_model.pkl")
+model = joblib.load(BASE_DIR / "Knn_heart_model.pkl")
 scaler = joblib.load(BASE_DIR / "heart_scaler.pkl")
 expected_columns = joblib.load(BASE_DIR / "heart_columns.pkl")
 
